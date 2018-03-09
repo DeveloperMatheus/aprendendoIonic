@@ -18,6 +18,14 @@ export class FilmsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  openDetails() {
+    this.navCtrl.push('FilmDetailsPage');
+  }
+
+  goToPlanets() {
+    this.navCtrl.parent.select(2);
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad FilmsPage');
   }
