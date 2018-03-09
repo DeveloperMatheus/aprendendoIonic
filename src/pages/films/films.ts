@@ -19,7 +19,10 @@ export class FilmsPage {
   }
 
   openDetails() {
-    this.navCtrl.push('FilmDetailsPage');
+    // this.navCtrl.push('FilmDetailsPage');
+    this.navCtrl.push('FilmDetailsPage', {filmId: 2});
+    // Passo parâmetros utilizando o método push e coloco estes parâmetros usando o segundo argumento.
+    // Na página FilmDetailsPage eu pego este parâmetro e posso cuspir no html utilizando o método get dentro do ts da própria FilmDetailsPage
   }
 
   goToPlanets() {
