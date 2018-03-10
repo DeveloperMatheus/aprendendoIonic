@@ -16,4 +16,8 @@ export class ApiProvider {
     return this.http.get('https://swapi.co/api/people');
   }
 
+  getPlanets() {
+    return this.http.get('https://swapi.co/api/planets');
+  }
+
 }

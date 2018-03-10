@@ -16,7 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class PeopleDetailsPage {
   pessoa:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.pessoa = this.navParams.get('pessoas');
+    this.pessoa = this.navParams.get('pessoa');
   }
 
   ionViewDidLoad() {

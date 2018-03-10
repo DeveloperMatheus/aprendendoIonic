@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ApiProvider } from '../../providers/api/api';
 
 /**
  * Generated class for the PlanetsPage page.
@@ -15,7 +16,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PlanetsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  planets: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider: ApiProvider) {
+    this.planets = this.apiProvider.getPlanets();
+  }
+
+  openDetails(planet) {
+    this.navCtrl.push('PlanetDetailsPage', {planet: planet});
   }
 
   ionViewDidLoad() {

@@ -22,8 +22,8 @@ export class PeoplePage {
     this.pessoas = this.apiProvider.getPeople();
   }
 
-  openDetails(pessoas) {
-    this.navCtrl.push('PeopleDetailsPage', {pessoas: pessoas});
+  openDetails(pessoa) {
+    this.navCtrl.push('PeopleDetailsPage', {pessoa: pessoa});
   }
 
   ionViewDidLoad() {
