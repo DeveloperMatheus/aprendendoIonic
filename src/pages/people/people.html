@@ -15,4 +15,19 @@
 
 <ion-content padding>
 
+    <ion-card *ngFor="let pessoas of (pessoas | async)?.results" (click)="openDetails(pessoas)">
+        <!-- <img [src]="img/nin-live.png"/> -->
+        <ion-card-content>
+          <ion-card-title>
+            {{pessoas.name}}
+            </ion-card-title>
+          <p>
+            {{pessoas.height}}<br>
+            {{pessoas.mass}}<br>
+            {{pessoas.hair_color}}<br>
+            {{pessoas.skin_color}}
+          </p>
+        </ion-card-content>
+      </ion-card>
+
 </ion-content>

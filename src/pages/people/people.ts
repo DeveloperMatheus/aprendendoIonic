@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ApiProvider } from '../../providers/api/api';
 
 /**
  * Generated class for the PeoplePage page.
@@ -15,7 +16,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PeoplePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  pessoas: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider:ApiProvider) {
+    this.pessoas = this.apiProvider.getPeople();
+  }
+
+  openDetails(pessoas) {
+    this.navCtrl.push('PeopleDetailsPage', {pessoas: pessoas});
   }
 
   ionViewDidLoad() {
