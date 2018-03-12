@@ -20,4 +20,10 @@ export class ApiProvider {
     return this.http.get('https://swapi.co/api/planets');
   }
 
+  getPlanet(url, callback) {
+    this.http.get(url)
+    .subscribe(planet => {
+      return callback(planet);
+    })
+  }
 }
