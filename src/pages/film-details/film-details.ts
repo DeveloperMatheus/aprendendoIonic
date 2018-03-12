@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 @IonicPage()
 @Component({
@@ -12,7 +13,7 @@ export class FilmDetailsPage {
   planetFound: any;
   film:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider:ApiProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public apiProvider:ApiProvider, private emailComposer: EmailComposer) {
     this.film = this.navParams.get('film');
     console.log(this.film)
   }
@@ -28,5 +29,16 @@ export class FilmDetailsPage {
       })
       
     }) 
+  }
+
+  shareFilm() {
+    let email = {
+      to: 'saimon@devdactic.com',
+      subject: 'I love this one: ' + this.film.title,
+      body: 'Can you remember the opening?<br><br>\"' + this.film.opening_crawl + '\"',
+      isHtml: true
+    };
+ 
+    this.emailComposer.open(email);
   }
 }
