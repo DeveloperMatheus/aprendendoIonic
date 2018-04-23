@@ -26,5 +26,11 @@
         <br> {{pessoa.skin_color}}
       </p>
     </ion-card-content>
+    <div class="teste">
+      <lottie-animation-view [options]="lottieConfig" [width]="200" [height]="200" (animCreated)="handleAnimation($event)">
+
+      </lottie-animation-view>
+      <button (click)="play()">play</button>
+    </div>
   </ion-card>
 </ion-content>
